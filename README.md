@@ -12,7 +12,6 @@ conda create -n tsc python=3.8
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 
 # install current path
-cd ./Code_paper2411_CoSLight/
 pip install -e .
 
 # install other package
@@ -33,7 +32,7 @@ export PYTHONPATH=${PYTHONPATH}:/your own folder/root directory of this folder
 ### 3. unzip resco scenarios' files
 
 ```shell
-cd ./Code_paper2411_CoSLight/CoSLight/
+cd ./CoSLight/
 ./decompress.sh zip_dir/       ### unzip the main folder
 ./decompress.sh zip_dir/envs/  ### unzip the child folder
 mv zip_dir/envs .              ### move the 'envs' to the current path
@@ -43,7 +42,7 @@ mv zip_dir/envs .              ### move the 'envs' to the current path
 ## Training
 
 ```shell
-cd ./Code_paper2411_CoSLight/CoSLight/scripts/train/
+cd ./CoSLight/scripts/train/
 python train_sumo.py
 ```
 
