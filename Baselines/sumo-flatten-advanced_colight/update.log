@@ -1,0 +1,19 @@
+1. position encoding 使用 nn.embeddings
+2. transformer Sequence-length 使用 agent number
+
+############ 2023.05.15
+add_pahse 做的改进是: [onpolicy/algorithms/r_mappo/algorithm/trans_net.py]
+使用frap的emb层 替换掉 56维的 emb
+
+self._phase_embedding = ModelBody(1, args.hidden_layer_size, self.args.state_key, device=device, args=args).to(device)
+hidden_size = args.hidden_layer_size * 7 * 8 # 7个特征， 8个phase
+        
+# 定义观测embeddings
+# self._obs_embedding = nn.Linear(
+#     in_features=obs_dim,
+#     out_features=hidden_size,
+#     bias=False
+# ).to(device)
+
+
+#### v9 加上 epsilon_decay
